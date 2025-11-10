@@ -31,15 +31,14 @@
             });
             return [_hidxs.sort(), _bidxs.sort()];
         }
-        function pretty(val, array)
-        {
+        function pretty(val, array) {
             let _span = $('<span>');
             let _x = '';
             if (array.length > 0) {
                 let _p = val.split('');
                 $.each(_p, function (i, v) {
                     if (array.includes(i)) {
-                       _x += `<b style="font-size:1.3em;">${v}</b>`
+                        _x += `<b style="font-size:1.3em;">${v}</b>`
                     } else {
                         _x += v;
                     }
@@ -65,22 +64,16 @@
                 _divRow.append(_divHit);
                 _divRow.append(_divBlow);
                 $('#checkhandb').append(_divRow);
-
-                $(`#${_inputId}`).on('keypress', function (e) {
+                $(`#${_inputId}`).on('input', function (e) {
                     getTarget();
                     let _val = $(this).val();
-                    if (_val.length >= TargetNum.length) {
+                    if (_val.length > TargetNum.length) {
                         $(this).val(_val.slice(0, -1));
                         return;
                     }
-                });
-                $(`#${_inputId}`).on('keyup', function (e) {
-                    let _val = $(this).val();
                     [_h, _b] = hinandblow(_val);
-
-                //    _divHit.text(_h.length);
-                    _divHit.html(pretty(_val,_h));
-                    _divBlow.html(pretty(_val,_b));
+                    _divHit.html(pretty(_val, _h));
+                    _divBlow.html(pretty(_val, _b));
                 });
             }
         }
