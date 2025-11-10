@@ -29,25 +29,20 @@
 </head>
 
 <body>
-	<div class="jumbotron text-center hero" style="font-family: 'Stick';">
-		<div class="container">
-			<h3 class="text-center border border-3 border-secondary rounded p-1 m-1 fw-bold">ヒットアンドブローチェック</h3>
+	<div class="m-1 container" style="cursor: default; user-select: none;">
+
+		<div class="row p-1">
+			<h3 class="col text-center border border-3 border-secondary rounded p-1 m-1 fw-bold">ヒットアンドブローチェック</h3>
+		</div>
+		<div class="row p-1">
+			<div class="col input-group">
+				<span class="input-group-text" id="addon-wrapping">設定値</span>
+				<input class="form-control" type="text" id="targetNumber" size="5"></input>
+			</div>
 		</div>
 	</div>
-	<div id="compareView" class="m-10 container" style="cursor: default; user-select: none;">
-		<div class="row p-2">
-			<div class="col">設定値</div>
-			<div class="col"><input type="text" id="targetNumber"></input></div>
-		</div>
-		<div class="row p-2">
-			<div class="col-6">
-				チェック
-			</div>
-			<div class="col">ヒット</div>
-			<div class="col">ブロー</div>
-		</div>
-		<div id="checkhandb">
-		</div>
+	<div id="compareView" class="m-1 container" style="cursor: default; user-select: none;">
+		<div class="row p-1" id="checkhandb"> </div>
 	</div>
 	<script defer type="text/javascript">
 		$(function () {
